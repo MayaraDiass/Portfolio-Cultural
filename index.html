@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Mayara Dias Pereira - Gestão Cultural, Produção e Tecnologia da Informação">
+    <meta name="description" content="Portfólio de Mayara Dias - Gestão Cultural, Produção e Tecnologia da Informação">
     <meta name="keywords" content="gestão cultural, produção cultural, música, tecnologia, jaraguá-go">
-    <title>Mayara Dias Pereira | Gestão Cultural & Produção</title>
+    <title>Mayara Dias | Gestão Cultural & Produção</title>
     
     <style>
         * {
@@ -158,14 +158,17 @@
 
         .hero-image {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--cinza-medio) 100%);
+            height: 420px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cinza);
-            font-size: 4rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(105%) brightness(102%) saturate(105%);
         }
 
         /* SEÇÃO SOBRE */
@@ -181,6 +184,21 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+        }
+
+        .sobre-image {
+            width: 100%;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sobre-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(105%) brightness(102%);
         }
 
         .sobre-texto h2 {
@@ -307,12 +325,21 @@
         .projeto-image {
             width: 100%;
             height: 220px;
-            background: linear-gradient(135deg, #E8D4C8 0%, #D2A79D 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: rgba(217, 90, 50, 0.2);
+            overflow: hidden;
+            background-color: var(--cinza-medio);
+        }
+
+        .projeto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+            filter: contrast(105%) brightness(102%);
+        }
+
+        .projeto-card:hover .projeto-image img {
+            transform: scale(1.05);
         }
 
         .projeto-content {
@@ -518,37 +545,35 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Olá! Sou a <span>Mayara</span></h1>
+            <h1>Olá! Sou a <span>Mayara Dias</span></h1>
             <p class="hero-subtitulo">Gestão Cultural | Produção | Músicista | Tecnologia</p>
             <p class="hero-descricao">
                 Agente e produtora cultural com expertise em gestão de projetos culturais, tecnologia da informação e atuação artística. Especialista em políticas públicas de cultura e desenvolvimento de iniciativas que conectam arte, tecnologia e comunidade.
             </p>
             <div class="cta-buttons">
-                <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20suas%20serviços!" class="btn btn-primary" target="_blank">
+                <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20seus%20servi%C3%A7os!" class="btn btn-primary" target="_blank">
                     💬 Conversar no WhatsApp
                 </a>
-                <a href="#contato" class="btn btn-secondary">
+                <a href="/Users/Mayara/Desktop/area de trabalho/landing-page-may/Currículo-cultural-mayara.pdf" class="btn btn-secondary">
                     📄 Baixar Currículo
                 </a>
             </div>
         </div>
         <div class="hero-image">
-            🎵
+            <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/mayara-bateria-.jpg" alt="Mayara Dias tocando bateria">
         </div>
     </section>
 
     <!-- SOBRE -->
     <section class="sobre" id="sobre">
         <div class="sobre-content">
-            <div>
-                <div class="hero-image" style="height: 300px;">
-                    🎬
-                </div>
+            <div class="sobre-image">
+                <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/mayara-com-violao.jpg" alt="Mayara Dias com violão">
             </div>
             <div class="sobre-texto">
                 <h2>Sobre <span>Mim</span></h2>
                 <p>
-                    Sou profissional multifacetada com formação em Tecnologia da Informação e atuação consolidada em gestão cultural. Combino expertise técnica com paixão pela arte e cultura para criar soluções inovadoras.
+                    Profissional multifacetada formada em Tecnologia da Informação e atuação na área de produção e gestão cultural. 
                 </p>
                 <p>
                     Trabalho com desenvolvimento e gestão de projetos culturais financiados por políticas públicas, incluindo Lei Aldir Blanc, CLAQUE - Retomada Cultural, Lei Paulo Gustavo e PNAB. Sou produtora cultural, músicista, intérprete e compositora.
@@ -593,7 +618,7 @@
             <div class="area-card">
                 <div class="area-icon">💻</div>
                 <h3>Tecnologia da Informação</h3>
-                <p>Técnica em T.I. com expertise em hardware, software, redes (LAN/WAN), segurança de dados e administração de sistemas.</p>
+                <p>Técnica em T.I. com expertise em hardware, software, redes, desenvolvimento e administração de sistemas.</p>
             </div>
 
             <div class="area-card">
@@ -616,25 +641,31 @@
             <h2 class="section-title">Projetos & <span>Experiências</span></h2>
             <div class="projetos-grid">
                 <div class="projeto-card">
-                    <div class="projeto-image">🎸</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/epistemica.JPG" alt="Banda Epistêmica">
+                    </div>
                     <div class="projeto-content">
-                        <div class="projeto-year">2024</div>
+                        <div class="projeto-year">2022</div>
                         <h3>Banda Epistêmica</h3>
                         <p>Projeto musical com direção de videoclipes, produção e divulgação. Multi-instrumentista fundadora e co-criadora da banda.</p>
                     </div>
                 </div>
 
                 <div class="projeto-card">
-                    <div class="projeto-image">🎬</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/fm.JPG" alt="Festival Multicultural">
+                    </div>
                     <div class="projeto-content">
-                        <div class="projeto-year">2024</div>
+                        <div class="projeto-year">2022</div>
                         <h3>Festival Multicultural</h3>
-                        <p>Desenvolvimento e gestão de festival multicultural do município com apresentações de artistas regionais e projetos especiais.</p>
+                        <p>Desenvolvimento e gestão do festival multicultural do município com apresentações de artistas regionais e projetos do setor musical.</p>
                     </div>
                 </div>
 
                 <div class="projeto-card">
-                    <div class="projeto-image">🎬</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/lei-PG.JPG" alt="Lei Paulo Gustavo">
+                    </div>
                     <div class="projeto-content">
                         <div class="projeto-year">2024</div>
                         <h3>Lei Paulo Gustavo</h3>
@@ -643,56 +674,35 @@
                 </div>
 
                 <div class="projeto-card">
-                    <div class="projeto-image">🚴</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/caminhada-ecologica.JPG" alt="Caminhada Ecológica e Registros">
+                    </div>
                     <div class="projeto-content">
-                        <div class="projeto-year">2024</div>
+                        <div class="projeto-year">2025</div>
                         <h3>Caminhada Ecológica</h3>
                         <p>Elaboração e organização da primeira caminhada ecológica de Jaraguá. Ativismo ambiental e cultural integrados.</p>
                     </div>
                 </div>
 
                 <div class="projeto-card">
-                    <div class="projeto-image">🎤</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/PNAB.JPG" alt="PNAB - Política Nacional Aldir Blanc">
+                    </div>
                     <div class="projeto-content">
-                        <div class="projeto-year">2023</div>
+                        <div class="projeto-year">2025</div>
                         <h3>PNAB - Política Nacional Aldir Blanc</h3>
                         <p>Desenvolvimento e gestão de projetos culturais financiados pela Política Nacional Aldir Blanc em 2024.</p>
                     </div>
                 </div>
 
                 <div class="projeto-card">
-                    <div class="projeto-image">📚</div>
+                    <div class="projeto-image">
+                        <img src="/Users/Mayara/Desktop/area de trabalho/landing-page-may/imagens-landing-page/aula-eletiva.JPG" alt="Aulas Eletivas de Música">
+                    </div>
                     <div class="projeto-content">
-                        <div class="projeto-year">2023</div>
+                        <div class="projeto-year">2025</div>
                         <h3>Aulas Eletivas de Música</h3>
                         <p>Professora convidada para aulas eletivas sobre música no Colégio Ornelo. Educação cultural e musical na comunidade.</p>
-                    </div>
-                </div>
-
-                <div class="projeto-card">
-                    <div class="projeto-image">🎪</div>
-                    <div class="projeto-content">
-                        <div class="projeto-year">2022</div>
-                        <h3>CLAQUE - Retomada Cultural</h3>
-                        <p>Elaboração de projetos para programa CLAQUE do Governo de Goiás. Foco em retomada cultural pós-pandemia.</p>
-                    </div>
-                </div>
-
-                <div class="projeto-card">
-                    <div class="projeto-image">🎭</div>
-                    <div class="projeto-content">
-                        <div class="projeto-year">2021-2022</div>
-                        <h3>Lei Aldir Blanc</h3>
-                        <p>Elaboração de projetos culturais para Lei Aldir Blanc no âmbito municipal. Suporte a artistas e iniciativas culturais locais.</p>
-                    </div>
-                </div>
-
-                <div class="projeto-card">
-                    <div class="projeto-image">🎸</div>
-                    <div class="projeto-content">
-                        <div class="projeto-year">2016-2023</div>
-                        <h3>Fábrica de Música</h3>
-                        <p>Sócia e secretária da produtora Fábrica de Música. Gestão, produção e direção de projetos com diversos artistas regionais.</p>
                     </div>
                 </div>
             </div>
@@ -705,7 +715,7 @@
         <p>Estou disponível para conversas sobre projetos culturais, consultoria, parcerias e oportunidades.</p>
         
         <div class="contato-links">
-            <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20seus%20serviços!" class="contato-link" target="_blank">
+            <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20seus%20servi%C3%A7os!" class="contato-link" target="_blank">
                 💬 WhatsApp: (62) 98530-4639
             </a>
             <a href="mailto:mayaradias.ti@gmail.com" class="contato-link">
@@ -714,7 +724,7 @@
             <a href="https://instagram.com/mayarad1as" class="contato-link" target="_blank">
                 📸 Instagram: @mayarad1as
             </a>
-            <a href="https://github.com/mayarad1as" class="contato-link" target="_blank">
+            <a href="https://github.com/mayaradiass" class="contato-link" target="_blank">
                 💻 GitHub
             </a>
         </div>
@@ -731,9 +741,9 @@
             <div class="social-links">
                 <a href="https://instagram.com/mayarad1as" target="_blank">Instagram</a>
                 <a href="https://github.com/mayarad1as" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/mayaradias" target="_blank">LinkedIn</a>
+                <a href="https://linkedin.com/in/mayaradias-ti" target="_blank">LinkedIn</a>
             </div>
-            <p>&copy; 2024 Mayara Dias Pereira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Mayara Dias. Todos os direitos reservados.</p>
             <p style="margin-top: 0.5rem; font-size: 0.8rem;">Gestão Cultural • Produção • Música • Tecnologia</p>
         </div>
     </footer>
