@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Mayara Dias Pereira - Gestão Cultural, Produção e Tecnologia da Informação">
+    <meta name="keywords" content="gestão cultural, produção cultural, música, tecnologia, jaraguá-go">
+    <title>Mayara Dias Pereira | Gestão Cultural & Produção</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --preto: #121212;
+            --branco: #FFFFFF;
+            --cinza: #666666;
+            --terracota: #D95A32;
+            --cinza-claro: #F5F5F5;
+            --cinza-medio: #E0E0E0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--preto);
+            background-color: var(--branco);
+        }
+
+        /* HEADER / NAVEGAÇÃO */
+        header {
+            background-color: var(--branco);
+            border-bottom: 1px solid var(--cinza-medio);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--preto);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--terracota);
+        }
+
+        nav a {
+            color: var(--cinza);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--terracota);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--preto);
+        }
+
+        .hero-content h1 span {
+            color: var(--terracota);
+        }
+
+        .hero-subtitulo {
+            font-size: 1.25rem;
+            color: var(--cinza);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-descricao {
+            font-size: 1rem;
+            color: var(--cinza);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.95rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--terracota);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background-color: #c24825;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 90, 50, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--preto);
+            color: var(--branco);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--cinza);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(18, 18, 18, 0.2);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--cinza-medio) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cinza);
+            font-size: 4rem;
+        }
+
+        /* SEÇÃO SOBRE */
+        .sobre {
+            background-color: var(--cinza-claro);
+            padding: 4rem 2rem;
+        }
+
+        .sobre-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sobre-texto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--preto);
+        }
+
+        .sobre-texto h2 span {
+            color: var(--terracota);
+        }
+
+        .sobre-texto p {
+            color: var(--cinza);
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .formacao {
+            background-color: var(--branco);
+            padding: 1.5rem;
+            border-left: 4px solid var(--terracota);
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+
+        .formacao h3 {
+            color: var(--preto);
+            margin-bottom: 0.5rem;
+        }
+
+        .formacao p {
+            font-size: 0.9rem;
+            color: var(--cinza);
+        }
+
+        /* ÁREAS DE ATUAÇÃO */
+        .areas {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--preto);
+        }
+
+        .section-title span {
+            color: var(--terracota);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .area-card {
+            background-color: var(--branco);
+            border: 1px solid var(--cinza-medio);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .area-card:hover {
+            border-color: var(--terracota);
+            box-shadow: 0 10px 30px rgba(217, 90, 50, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .area-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .area-card h3 {
+            color: var(--preto);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .area-card p {
+            color: var(--cinza);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* PROJETOS / GALERIA */
+        .projetos {
+            background-color: var(--cinza-claro);
+            padding: 4rem 2rem;
+        }
+
+        .projetos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .projeto-card {
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .projeto-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .projeto-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #E8D4C8 0%, #D2A79D 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(217, 90, 50, 0.2);
+        }
+
+        .projeto-content {
+            padding: 1.5rem;
+        }
+
+        .projeto-content h3 {
+            color: var(--preto);
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        .projeto-year {
+            color: var(--terracota);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .projeto-content p {
+            color: var(--cinza);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CONTATOS */
+        .contato {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--preto);
+        }
+
+        .contato p {
+            font-size: 1.1rem;
+            color: var(--cinza);
+            margin-bottom: 2rem;
+        }
+
+        .contato-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contato-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--preto);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--cinza-medio);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .contato-link:hover {
+            background-color: var(--terracota);
+            color: var(--branco);
+            border-color: var(--terracota);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--branco);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--terracota);
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 4rem 2rem 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-texto h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .projetos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contato h2 {
+                font-size: 2rem;
+            }
+
+            .contato-links {
+                flex-direction: column;
+            }
+
+            .contato-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .area-card, .projeto-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Mayara <span>Dias</span></a>
+            <div>
+                <a href="#sobre">Sobre</a>
+                <a href="#areas">Áreas</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Olá! Sou a <span>Mayara</span></h1>
+            <p class="hero-subtitulo">Gestão Cultural | Produção | Músicista | Tecnologia</p>
+            <p class="hero-descricao">
+                Agente e produtora cultural com expertise em gestão de projetos culturais, tecnologia da informação e atuação artística. Especialista em políticas públicas de cultura e desenvolvimento de iniciativas que conectam arte, tecnologia e comunidade.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20suas%20serviços!" class="btn btn-primary" target="_blank">
+                    💬 Conversar no WhatsApp
+                </a>
+                <a href="#contato" class="btn btn-secondary">
+                    📄 Baixar Currículo
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            🎵
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="sobre-content">
+            <div>
+                <div class="hero-image" style="height: 300px;">
+                    🎬
+                </div>
+            </div>
+            <div class="sobre-texto">
+                <h2>Sobre <span>Mim</span></h2>
+                <p>
+                    Sou profissional multifacetada com formação em Tecnologia da Informação e atuação consolidada em gestão cultural. Combino expertise técnica com paixão pela arte e cultura para criar soluções inovadoras.
+                </p>
+                <p>
+                    Trabalho com desenvolvimento e gestão de projetos culturais financiados por políticas públicas, incluindo Lei Aldir Blanc, CLAQUE - Retomada Cultural, Lei Paulo Gustavo e PNAB. Sou produtora cultural, músicista, intérprete e compositora.
+                </p>
+                
+                <div class="formacao">
+                    <h3>🎓 Formação Acadêmica</h3>
+                    <p><strong>Graduada em Tecnologia da Informação</strong> - UNIP (2021-2023)</p>
+                    <p><strong>Pós-Graduanda em Gestão Cultural</strong> - UEG / SECULT-GO</p>
+                </div>
+
+                <div class="formacao">
+                    <h3>📍 Localização</h3>
+                    <p>Jaraguá - Goiás | Disponível para deslocamento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="areas" id="areas">
+        <h2 class="section-title">Áreas de <span>Atuação</span></h2>
+        <div class="areas-grid">
+            <div class="area-card">
+                <div class="area-icon">🎭</div>
+                <h3>Gestão Cultural</h3>
+                <p>Desenvolvimento e gestão de projetos culturais financiados por políticas públicas. Expertise em Lei Aldir Blanc, CLAQUE, Lei Paulo Gustavo e PNAB.</p>
+            </div>
+
+            <div class="area-card">
+                <div class="area-icon">🎬</div>
+                <h3>Produção Cultural</h3>
+                <p>Produção de eventos, shows, festivais multiculturais e projetos artísticos. Direção de videoclipes, edição e divulgação de conteúdo.</p>
+            </div>
+
+            <div class="area-card">
+                <div class="area-icon">🎵</div>
+                <h3>Música & Artes</h3>
+                <p>Multi-instrumentista, compositora e intérprete. Fundadora da Banda Epistêmica. Ensino de música e aulas eletivas em instituições educacionais.</p>
+            </div>
+
+            <div class="area-card">
+                <div class="area-icon">💻</div>
+                <h3>Tecnologia da Informação</h3>
+                <p>Técnica em T.I. com expertise em hardware, software, redes (LAN/WAN), segurança de dados e administração de sistemas.</p>
+            </div>
+
+            <div class="area-card">
+                <div class="area-icon">📊</div>
+                <h3>Análise de Projetos</h3>
+                <p>Parecerista e analista de projetos culturais. Elaboração de propostas simplificadas e documentação técnica para captação de recursos.</p>
+            </div>
+
+            <div class="area-card">
+                <div class="area-icon">🌍</div>
+                <h3>Consultoria Cultural</h3>
+                <p>Assessoria cultural a artistas regionais. Membro do Conselho de Cultura e Turismo. Projetos de sustentabilidade e turismo cultural.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="projetos" id="projetos">
+        <div class="projetos-container">
+            <h2 class="section-title">Projetos & <span>Experiências</span></h2>
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <div class="projeto-image">🎸</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2024</div>
+                        <h3>Banda Epistêmica</h3>
+                        <p>Projeto musical com direção de videoclipes, produção e divulgação. Multi-instrumentista fundadora e co-criadora da banda.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎬</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2024</div>
+                        <h3>Festival Multicultural</h3>
+                        <p>Desenvolvimento e gestão de festival multicultural do município com apresentações de artistas regionais e projetos especiais.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎬</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2024</div>
+                        <h3>Lei Paulo Gustavo</h3>
+                        <p>Desenvolvimento e gestão de projetos culturais aprovados pela Lei Paulo Gustavo no âmbito municipal de Jaraguá-GO.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🚴</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2024</div>
+                        <h3>Caminhada Ecológica</h3>
+                        <p>Elaboração e organização da primeira caminhada ecológica de Jaraguá. Ativismo ambiental e cultural integrados.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎤</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2023</div>
+                        <h3>PNAB - Política Nacional Aldir Blanc</h3>
+                        <p>Desenvolvimento e gestão de projetos culturais financiados pela Política Nacional Aldir Blanc em 2024.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">📚</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2023</div>
+                        <h3>Aulas Eletivas de Música</h3>
+                        <p>Professora convidada para aulas eletivas sobre música no Colégio Ornelo. Educação cultural e musical na comunidade.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎪</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2022</div>
+                        <h3>CLAQUE - Retomada Cultural</h3>
+                        <p>Elaboração de projetos para programa CLAQUE do Governo de Goiás. Foco em retomada cultural pós-pandemia.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎭</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2021-2022</div>
+                        <h3>Lei Aldir Blanc</h3>
+                        <p>Elaboração de projetos culturais para Lei Aldir Blanc no âmbito municipal. Suporte a artistas e iniciativas culturais locais.</p>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-image">🎸</div>
+                    <div class="projeto-content">
+                        <div class="projeto-year">2016-2023</div>
+                        <h3>Fábrica de Música</h3>
+                        <p>Sócia e secretária da produtora Fábrica de Música. Gestão, produção e direção de projetos com diversos artistas regionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <h2>Vamos <span style="color: #D95A32;">Conversar</span>?</h2>
+        <p>Estou disponível para conversas sobre projetos culturais, consultoria, parcerias e oportunidades.</p>
+        
+        <div class="contato-links">
+            <a href="https://wa.me/62985304639?text=Oi%20Mayara!%20Gostaria%20de%20conversar%20sobre%20seus%20serviços!" class="contato-link" target="_blank">
+                💬 WhatsApp: (62) 98530-4639
+            </a>
+            <a href="mailto:mayaradias.ti@gmail.com" class="contato-link">
+                ✉️ Email: mayaradias.ti@gmail.com
+            </a>
+            <a href="https://instagram.com/mayarad1as" class="contato-link" target="_blank">
+                📸 Instagram: @mayarad1as
+            </a>
+            <a href="https://github.com/mayarad1as" class="contato-link" target="_blank">
+                💻 GitHub
+            </a>
+        </div>
+
+        <div class="formacao" style="display: inline-block; margin-top: 2rem;">
+            <h3>📍 Localização</h3>
+            <p>Jaraguá - GO | Disponível para deslocamento e projetos remotos</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://instagram.com/mayarad1as" target="_blank">Instagram</a>
+                <a href="https://github.com/mayarad1as" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/mayaradias" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2024 Mayara Dias Pereira. Todos os direitos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Gestão Cultural • Produção • Música • Tecnologia</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll para links âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
